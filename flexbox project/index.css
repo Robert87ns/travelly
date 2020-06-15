@@ -1,0 +1,189 @@
+*, *::after *::before {
+    box-sizing: border-box;
+}
+body {
+    background-color: darkcyan;
+    font-size: 25px;
+    height: 100vh;
+    margin:0;
+    
+    
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0;
+}
+.container h1{
+    position: relative;
+    font-weight: lighter;
+    flex-basis: 0 0 23%;
+}
+
+.container h1::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    margin-bottom: 2px;
+    border-bottom: 3px solid darkkhaki;
+    display: block;
+    position: absolute;
+    right: 0;
+}
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    border-radius: 50%;
+    opacity: .85;
+    position: absolute;
+    transform: scale(2);
+    top: 133px;
+    left: 25%;
+   
+
+}
+.circle2 {
+    width: 100px;
+    height: 100px;
+    background-color:darkkhaki;
+    border-radius: 50%;
+    opacity: .45;
+    position: absolute;
+    transform: scale(2);
+    top: 140px;
+    left: 23%;
+    background-blend-mode: multiply;
+   
+
+}
+
+.container a {
+    display: inline;
+    text-decoration: none;
+    color: powderblue;
+    
+}
+
+
+.container a[data-tool-tip] {
+    position: relative;
+}
+
+.container a[data-tool-tip]::after {
+    content: attr(data-tool-tip);
+    display: block;
+    position:absolute;
+    background-color: rosybrown;
+    padding: 1em 2em;
+    border-radius: 5px;
+    font-size: .75em;
+    bottom: 0;
+    left: 130%;
+    white-space: nowrap;
+    transform: scale(0);
+    transition: transform ease-out 150ms,
+                bottom ease-out 150ms;
+    
+
+}
+
+.container a[data-tool-tip]:hover::after {
+    transform: scale(1);
+    bottom: -50%;
+    
+}
+
+
+.decorations {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    position: relative;
+    background-color: salmon;
+    
+
+    
+    
+}
+.decorations h1,
+.decorations h2,
+.decorations p {
+    padding-top: 3px;
+    margin-top: 3%;
+    margin-bottom: 0;
+    position: relative;
+}
+.decorations .studies {
+    padding-top: 70px;
+}
+
+.decorations h1::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    margin-bottom: 2px;
+    border-bottom: 3px solid darkkhaki;
+    display: block;
+    position: absolute;
+    right: 0;
+
+    
+}
+.decorations h1::before {
+    content: "";
+    width: 100%;
+    height: 3px;
+    margin-bottom: 2px;
+    border-bottom: 3px solid darkkhaki;
+    display: block;
+    position: absolute;
+    right: 0;
+    
+
+    
+}
+.intro {
+    text-align: justify;
+    position: relative;
+    display: inline-block;
+    z-index: 0;
+}
+.intro::before {
+    content:"";
+    height:101%;
+    display: block;
+    background-color: darkkhaki;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20px;
+}
+.intro::after {
+    content:"";
+    height:100%;
+    display: block;
+    background-color: red;
+    position: absolute;
+    width: 100vh;
+    left:50%;
+    transform: translateX(-50%);
+    top:0;
+    z-index:-2;
+    
+}
+.gallery {
+    background-color: darkkhaki;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    z-index: -5;
+}
